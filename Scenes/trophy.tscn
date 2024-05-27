@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://cxxxwff5w40dt"]
+
+[ext_resource type="Script" path="res://Scenes/trophy.gd" id="1_1mama"]
+[ext_resource type="Texture2D" uid="uid://b81tv8qjvpkc4" path="res://misc/End (Pressed) (64x64).png" id="1_qqmf5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huhhm"]
+atlas = ExtResource("1_qqmf5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1ypd"]
+atlas = ExtResource("1_qqmf5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnsn1"]
+atlas = ExtResource("1_qqmf5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2r00"]
+atlas = ExtResource("1_qqmf5")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48xvi"]
+atlas = ExtResource("1_qqmf5")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my0hg"]
+atlas = ExtResource("1_qqmf5")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_533mu"]
+atlas = ExtResource("1_qqmf5")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taufu"]
+atlas = ExtResource("1_qqmf5")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0mys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huhhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1ypd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnsn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2r00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48xvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my0hg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_533mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taufu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sn8ol"]
+radius = 26.0
+height = 58.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_1mama")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i0mys")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_sn8ol")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

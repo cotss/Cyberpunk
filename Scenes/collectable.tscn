@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://d3hl6ky0cxc1a"]
+
+[ext_resource type="Script" path="res://Scenes/collectable.gd" id="1_vcmab"]
+[ext_resource type="Texture2D" uid="uid://co6702p0i6nt7" path="res://tiles/Card.png" id="2_qn8ah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41qkf"]
+atlas = ExtResource("2_qn8ah")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehq2c"]
+atlas = ExtResource("2_qn8ah")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x2n1"]
+atlas = ExtResource("2_qn8ah")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h4ol"]
+atlas = ExtResource("2_qn8ah")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxy7p"]
+atlas = ExtResource("2_qn8ah")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf2yo"]
+atlas = ExtResource("2_qn8ah")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk3rr"]
+atlas = ExtResource("2_qn8ah")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0qwr"]
+atlas = ExtResource("2_qn8ah")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11ynp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41qkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehq2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x2n1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h4ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxy7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf2yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk3rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0qwr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_52ni4"]
+radius = 13.0384
+
+[node name="collectable" type="Area2D"]
+script = ExtResource("1_vcmab")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.95833, 1.83333)
+sprite_frames = SubResource("SpriteFrames_11ynp")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.954608
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_52ni4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

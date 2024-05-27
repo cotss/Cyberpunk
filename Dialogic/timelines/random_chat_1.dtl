@@ -1,0 +1,2 @@
+join random 1
+Java is designed to be platform-independent at both the source and binary levels. This is achieved through the Java Virtual Machine (JVM), which allows Java programs to be compiled into bytecode that can be executed on any platform that has a JVM installed. This "write once, run anywhere" capability is one of Java's core strengths.

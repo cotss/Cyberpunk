@@ -1,0 +1,2 @@
+join random 1
+Frog: Java provides automatic memory management through a process known as garbage collection. The Java Garbage Collector (GC) automatically identifies and disposes of objects that are no longer in use, which helps prevent memory leaks and reduce the likelihood of common programming errors such as null pointer exceptions.

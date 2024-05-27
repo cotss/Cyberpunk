@@ -1,0 +1,8 @@
+join Frog 1
+Frog: What's up?
+Frog: I'm Ross, and I was sent here to the future in order to help you learn some codes
+Frog: Go COLLECT all the code cards you see in this map
+join code 3
+Frog: AFTER you collect everything, come and meet me at the end of the map
+Frog: I WISH YOU LUCK CYBORG!
+[signal arg="exit_frog"]

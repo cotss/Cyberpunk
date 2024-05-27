@@ -1,0 +1,118 @@
+[gd_scene load_steps=17 format=3 uid="uid://dir13aqcwfre2"]
+
+[ext_resource type="Script" path="res://Scenes/wheelchair.gd" id="1_uj6eg"]
+[ext_resource type="Texture2D" uid="uid://mnnkys2x1des" path="res://enemies/Idle.png" id="2_d10og"]
+[ext_resource type="Texture2D" uid="uid://dackuf4voy1oa" path="res://Cyberpunk/BG characters/10/Idle.png" id="2_f0uer"]
+[ext_resource type="Texture2D" uid="uid://c5rv4shfoxong" path="res://enemies/Walk.png" id="3_ghne2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0csxs"]
+atlas = ExtResource("2_f0uer")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fojgx"]
+atlas = ExtResource("2_f0uer")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3p13"]
+atlas = ExtResource("2_f0uer")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfm54"]
+atlas = ExtResource("2_f0uer")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1cua"]
+atlas = ExtResource("2_d10og")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cwum"]
+atlas = ExtResource("3_ghne2")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o07e4"]
+atlas = ExtResource("3_ghne2")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdelr"]
+atlas = ExtResource("3_ghne2")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhugj"]
+atlas = ExtResource("3_ghne2")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xctnk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0csxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fojgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3p13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfm54")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1cua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cwum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o07e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdelr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhugj")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imtu4"]
+size = Vector2(42.5, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mepog"]
+size = Vector2(43, 39.125)
+
+[node name="wheelchair" type="CharacterBody2D"]
+script = ExtResource("1_uj6eg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4, -28)
+scale = Vector2(1.41667, 1.28125)
+sprite_frames = SubResource("SpriteFrames_xctnk")
+animation = &"idle"
+autoplay = "walk"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_imtu4")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-21, -11)
+target_position = Vector2(0, 20)
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(2.5, -17.4375)
+shape = SubResource("RectangleShape2D_mepog")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

@@ -1,0 +1,16 @@
+join Frog2 1
+Frog: Well, well, well! Seems like you managed to reach the end!
+Frog: Let's see what codes you've collected.
+Frog: using System;
+Frog: This includes the System namespace, which contains fundamental classes.
+Frog: class Program
+Frog: This declares a class named Program.
+Frog: {static void Main(string[] args)
+Frog: This is the Main method, which is the entry point of the program.
+Frog: {Console.WriteLine("Hello, World!");
+Frog: this prints "Hello, World!" to the console.
+Frog: Console.WriteLine("This is a C# program.");
+Frog: This prints "This is a C# program." to the console.
+Frog: Console.WriteLine("Goodbye!"); // Prints "Goodbye!" to the console.}}
+Now that you've learned something, go and claim your trophy!
+[signal arg="exit"]

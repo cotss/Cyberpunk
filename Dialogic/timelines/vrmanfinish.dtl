@@ -1,0 +1,19 @@
+join vrman2 1
+Oh hey! You made it!
+Let's see what you collected.
+OMG this is amazing, these lines are for a switch function in java!
+public class SimpleSwitch {\: This line declares a public class named SimpleSwitch. In Java, every executable program needs to be within a class.
+public static void main(String[] args) {\: This line declares the main method, which is the entry point of the Java program. It's where the program starts execution.
+int choice = 2;\: This line declares an integer variable named choice and assigns it the value 2. This variable will be used to determine which case to execute in the switch statement.
+switch(choice) {\: This line begins the switch statement. It evaluates the value of the choice variable and executes the code block associated with the matching case.
+case 1\:\: This line defines the first case of the switch statement. It specifies that if the value of choice is 1, the code within this case will be executed.
+System.out.println("You chose option 1");\: This line prints the message "You chose option 1" to the console if choice is 1.
+This line is used to exit the switch statement once a case has been executed. Without the break statement, the code would continue to execute the subsequent cases regardless of whether their conditions are met.
+case 2\:\: This line defines the second case of the switch statement. It specifies that if the value of choice is 2, the code within this case will be executed.
+\: This line specifies the default case, which is executed if none of the other cases match the value of choice.
+System.out.println("Invalid choice");\: This line prints the message "Invalid choice" to the console if the value of choice does not match any of the cases.
+This line marks the end of the switch statement.
+This line marks the end of the main method.
+This line marks the end of the SimpleSwitch class.
+you can go and collect that trophy! You deserve it!
+[signal arg="exitss"]

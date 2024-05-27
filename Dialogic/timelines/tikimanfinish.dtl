@@ -1,0 +1,26 @@
+join tikiman2 1
+Coding really is amazing!
+These lines are for a login function in java!
+import java.util.Scanner;\: This line imports the Scanner class, which is used for reading user input.
+public class SimpleLogin {\: This line declares a public class named SimpleLogin.
+public static void main(String[] args) {\: This line declares the main method, which is the entry point of the Java program.
+String correctUsername = "admin";\: This line declares a String variable named correctUsername and initializes it with the value "admin". This is the correct username for the login.
+String correctPassword = "password123";\: This line declares a String variable named correctPassword and initializes it with the value "password123". This is the correct password for the login.
+Scanner scanner = new Scanner(System.in);\: This line creates a Scanner object to read input from the console.
+System.out.print("Enter username\: ");\: This line prompts the user to enter their username.
+String username = scanner.nextLine();\: This line reads the username input by the user and stores it in a variable named username.
+System.out.print("Enter password\: ");\: This line prompts the user to enter their password.
+String password = scanner.nextLine();\: This line reads the password input by the user and stores it in a variable named password.
+(if) (login(username, password, correctUsername, correctPassword)) {\: This line calls the login method, passing the entered username and password, as well as the correct username and password. It then checks if the login was successful.
+System.out.println("Login successful!");\: This line prints "Login successful!" to the console if the login was successful.
+} else {\: This line starts the else block, which executes if the login was not successful.
+System.out.println("Invalid username or password.");\: This line prints "Invalid username or password." to the console if the login was not successful.
+This line ends the else block.
+scanner.close();\: This line closes the Scanner object to release the system resources associated with it.
+This line ends the main method.
+public static boolean login(String username, String password, String correctUsername, String correctPassword) {\: This line declares a static method named login that takes four parameters\: the entered username, the entered password, the correct username, and the correct password.
+return username.equals(correctUsername) && password.equals(correctPassword);\: This line checks if the entered username and password match the correct username and password. It returns true if both match and false otherwise.
+This line ends the login method.
+This line ends the SimpleLogin class.
+You may now go ahead and clim your reward!
+[signal arg="exitssssss"]
